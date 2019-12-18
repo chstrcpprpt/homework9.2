@@ -1,4 +1,7 @@
 const inquirer = require("inquirer");
+const ejs = require("ejs");
+const renderHTML = require("./generateHTML");
+const axios = require("axios");
 
 function userInput() {
   return inquirer.prompt([
@@ -15,9 +18,14 @@ function userInput() {
   ]);
 };
 
+async function gitHubUser(username) {
+  const res = await axios.get(`http://api.github.com/users/${username}`)
+}
+
 async function runAll() {
   const {username, favColour} = await userInput();
-  console.log(username, favColour); 
+  // console.log(username, favColour); 
+  renderHTML(username, favColour);
 }
 
 runAll();
