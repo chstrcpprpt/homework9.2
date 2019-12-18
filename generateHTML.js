@@ -6,8 +6,9 @@ const renderHTML = function(username, favColour) {
 
   const htmlString = ejs.render(template, 
     {
-    username: username,
-    favColour: favColour
+    username,
+    favColour,
+    data
     }
   );
 
