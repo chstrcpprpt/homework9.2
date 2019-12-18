@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GitHub Resume</title>
+  <style>
+    *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+    body {
+      display: grid;
+      grid-template-columns: auto 225px 225px 113px 113px 113px 225px 225px auto;
+      grid-template-rows: 439px 219px 219px 219px 548px 110px;
+      grid-template-areas: 
+        ". top-sec top-sec top-sec top-sec top-sec top-sec top-sec ."
+        ". pic pic header header header header header ."
+        ". pic pic nav nav nav nav nav ."
+        ". . bio bio bio bio bio . ."
+        ". . main main main main main . ."
+        ". footer footer footer footer footer footer footer ."
+      ;
+    }
+
+    .sec-top {
+    grid-area: top-sec;
+    display: flex;
+    background: cadetblue;
+    }
+
+    .sec-header {
+      grid-area: header;
+      display: flex;
+
+      justify-content: center;
+      align-items: flex-end;
+
+      background: cadetblue;
+
+      line-height: 0.68;
+      padding-right: 20px;
+    }
+
+    .sec-header h1 {
+      font-size: 140px;
+      color: white;
+    }
+
+    .sec-pic {
+      grid-area: pic;
+      display: flex;
+
+      justify-content: center;
+      padding-left: 20px;
+    }
+
+    .bg {
+      grid-column: 2 / 4;
+      grid-row: 2 / 3;
+      background: cadetblue;
+    }
+
+    .bg2 {
+      grid-column: 2 / 9;
+      grid-row: 3 / 7;
+      background: rgb(137, 226, 230);
+    }
+
+    .sec-pic img {
+      border: 6px solid cadetblue;
+      border-radius: 50%;
+      background: white;
+
+      object-fit: contain;
+    }
+
+    .sec-nav {
+      grid-area: nav;
+      display: flex;
+
+      justify-content: center;
+    }
+
+    .icon-location, .icon-github, .icon-blog {
+      font-size: 40px;
+      color: cadetblue;
+    }
+
+    .text-location {
+      font-size: 20px;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      
+      align-items: center;
+      justify-content: space-between;
+
+      width: 300px;
+    }
+
+    .location {
+      display: flex;
+    }
+
+    .location p {
+      margin-left: 10px;
+    }
+
+    .sec-bio {
+      grid-area: bio;
+      display: flex;
+
+      justify-content: center;
+    }
+
+    .bio {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+      background: white;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    .bio p {
+      font-size: 40px;
+      font-weight: 900;
+      /* background: white;
+      padding: 1em 5em; */
+    }
+
+    .sec-main {
+      grid-area: main;
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        "repos followers"
+        "stars following"
+      ;
+      gap: 20px;
+    }
+
+    .repos {
+      grid-area: repos;
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    .stars {
+      grid-area: stars;
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    .followers {
+      grid-area: followers;
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    .following {
+      grid-area: following;
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content {
+      font-size: 40px;
+      font-weight: 900;
+      background: white;
+    }
+
+    .title {
+      color: cadetblue;
+    }
+
+    .data {
+      margin-top: 40px;
+    }
+
+    .sec-footer {
+      grid-area: footer;
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      /* line-height: 0.68; */
+      /* padding-right: 20px; */
+    }
+
+    .sec-footer h2 {
+      font-size: 40px;
+      color: cadetblue;
+    }
+  </style>
+
+</head>
+<body>
+  
+  <div class="sec-top"></div>
+
+  <div class="sec-header">
+    <h1 class="username">mankinchi</h1>
+  </div>
+
+  <div class="bg"></div>
+  <div class="bg2"></div>
+
+  <div class="sec-pic"><img src="mankinchi.png" alt="profile picture"></div>
+
+  <div class="sec-nav">
+    <div class="nav-wrapper">
+      <div class="location">
+        <a href="#"><i class="fas fa-map-marker-alt icon-location"></i></a>
+        <!-- <p class= "text-location">Melbourne, Australia</p> -->
+      </div>
+      <div>
+        <a href="#"><i class="fab fa-github icon-github"></i></a>
+      </div>
+      <div>
+        <a href="#"><i class="fas fa-rss icon-blog"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-bio">
+    <div class="bio">
+      <p>A passionate coder</p>
+    </div>
+  </div>
+
+  <div class="sec-main">
+    <div class="content repos">
+      <p class="title">Public repositories:</p>
+      <p class="data">17</p>
+    </div>
+    <div class="content followers">
+      <p class="title">Followers:</p>
+      <p class="data">10</p>
+    </div>
+    <div class="content stars">
+      <p class="title">GitHub Stars:</p>
+      <p class="data">2</p>
+    </div>
+    <div class="content following">
+      <p class="title">Following:</p>
+      <p class="data">4</p>
+    </div>
+  </div>
+
+  <div class="sec-footer">
+    <h2 class="text-location">Melbourne, Australia</h2>
+  </div>
+
+
+  <!-- JS -->
+  <script src="./app.js"></script>
+  <script src="https://kit.fontawesome.com/54a1bfa452.js" crossorigin="anonymous"></script>
+</body>
+</html>
