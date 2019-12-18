@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const ejs = require("ejs");
 const renderHTML = require("./generateHTML");
 const axios = require("axios");
 
@@ -19,13 +18,18 @@ function userInput() {
 };
 
 async function gitHubUser(username) {
-  const res = await axios.get(`http://api.github.com/users/${username}`)
-}
+  const {data} = await axios.get(`http://api.github.com/users/${username}`);
+  return data;
+};
 
 async function runAll() {
   const {username, favColour} = await userInput();
-  // console.log(username, favColour); 
-  renderHTML(username, favColour);
+ 
+  const data = await gitHubUser(username);
+  console.log(data);
+
+  // renderHTML(username, favColour);
+
 }
 
 runAll();
