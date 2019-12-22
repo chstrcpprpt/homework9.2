@@ -2,12 +2,14 @@ const inquirer = require("inquirer");
 const renderHTML = require("./generateHTML");
 const axios = require("axios");
 
+
 function userInput() {
   return inquirer.prompt([
     {
       type: "input",
       name: "username",
-      message: "What is you GitHub username?"
+      message: "What is you GitHub username?",
+      default: "mankinchi"
     },
     {
       type: "input",
@@ -26,9 +28,9 @@ async function runAll() {
   const {username, favColour} = await userInput();
  
   const data = await gitHubUser(username);
-  console.log(data);
+  // console.log(data);
 
-  // renderHTML(username, favColour);
+  renderHTML(username, favColour, data);
 
 }
 
