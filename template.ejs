@@ -27,9 +27,9 @@
     }
 
     .sec-top {
-    grid-area: top-sec;
-    display: flex;
-    background: <%= favColour %>;
+      grid-area: top-sec;
+      display: flex;
+      background: <%= favColour %>;
     }
 
     .sec-header {
@@ -68,6 +68,7 @@
       grid-column: 2 / 9;
       grid-row: 3 / 7;
       background: rgb(137, 226, 230);
+      z-index: -1;
     }
 
     .sec-pic img {
@@ -228,7 +229,7 @@
   <div class="bg"></div>
   <div class="bg2"></div>
 
-  <div class="sec-pic"><img src="mankinchi.png" alt="profile picture"></div>
+  <div class="sec-pic"><img src="<%=data.avatar_url %>" alt="profile picture"></div>
 
   <div class="sec-nav">
     <div class="nav-wrapper">
